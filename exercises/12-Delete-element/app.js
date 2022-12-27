@@ -1,6 +1,10 @@
-let people = ['juan','ana','michelle','daniella','stefany','lucy','barak', 'emilio'];
+const people = ['juan', 'ana', 'michelle', 'daniella', 'stefany', 'lucy', 'barak', 'emilio'];
 
-//your code below
+function deletePerson(name) {
+    const filterPerson = people.filter(element => element !== name);
+
+    return filterPerson;
+}
 
 console.log(deletePerson('daniella'));
 console.log(deletePerson('juan'));
