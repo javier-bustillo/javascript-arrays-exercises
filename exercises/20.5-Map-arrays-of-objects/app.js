@@ -1,13 +1,37 @@
-let people = [
-	{ name: 'Joe', birthDate: new Date(1986,10,24) },
-	{ name: 'Bob', birthDate: new Date(1975,5,24) },
-	{ name: 'Erika', birthDate: new Date(1989,6,12) },
-	{ name: 'Dylan', birthDate: new Date(1999,12,14) },
-	{ name: 'Steve', birthDate: new Date(2003,4,24) }
+const people = [{
+        name: 'Joe',
+        birthDate: new Date(1986, 10, 24)
+    },
+    {
+        name: 'Bob',
+        birthDate: new Date(1975, 5, 24)
+    },
+    {
+        name: 'Erika',
+        birthDate: new Date(1989, 6, 12)
+    },
+    {
+        name: 'Dylan',
+        birthDate: new Date(1999, 12, 14)
+    },
+    {
+        name: 'Steve',
+        birthDate: new Date(2003, 4, 24)
+    }
 ];
 
-let simplifier = function(person){
-	return person.name;
+const simplifier = person => {
+    let dateToday = new Date();
+    let personBirthdate = person.birthDate;
+    let personAge = dateToday.getFullYear() - personBirthdate.getFullYear();
+    let personAgeMonthDiff = dateToday.getMonth() - personBirthdate.getMonth();
+
+    if (personAgeMonthDiff < 0 || personAgeMonthDiff === 0 && dateToday < personBirthdate) {
+        personAge--;
+
+    }
+
+    return `Hello, my name is ${person.name} and I am ${personAge} years old`;
 };
 
 console.log(people.map(simplifier));
