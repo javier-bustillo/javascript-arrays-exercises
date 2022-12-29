@@ -1,9 +1,10 @@
-let arrayOfCelsiusValues = [-2,34,56,-10];
+let arrayOfCelsiusValues = [-2, 34, 56, -10];
 
-let arrayOfFahrenheitValues = arrayOfCelsiusValues.map(function(value){
-	
-	//add your code here and return the new value
-	
+const arrayOfFahrenheitValues = arrayOfCelsiusValues.map(value => {
+
+    let celsiusToFahrenheit = ((value * (9 / 5)) + 32);
+
+    return celsiusToFahrenheit;
 });
 
 console.log(arrayOfFahrenheitValues);
