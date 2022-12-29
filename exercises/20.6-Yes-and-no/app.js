@@ -8,4 +8,5 @@ const myFunction = (val) => {
         return val;
     }
 };
-console.log(theBools.map(myFunction));
+const newArr = theBools.map(myFunction);
+console.log(newArr);
