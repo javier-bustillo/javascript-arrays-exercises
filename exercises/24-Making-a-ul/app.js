@@ -34,23 +34,17 @@ let allColors = [{
 } */
 
 function generateLI(color) {
-    htmlLIString = '<li>' +
-        filterColors(color) + '</li>';
+    htmlLIString = '<li>' + filterColors(color) +
+        '</li>';
     return htmlLIString;
 }
 
 function filterColors(color) {
-    let colors = '';
-    for (let i in allColors) {
-        if (allColors[i].sexy) {
-            console.log(allColors[i].label);
-            return colors += allColors[i].label;
-        }
+    if (color.sexy) {
+        return color.label
     }
 
-
 }
-
 
 function generateHTMLFromArray(array) {
 
