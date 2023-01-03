@@ -1,18 +1,18 @@
 function lyricsGenerator(arr) {
-    let lyrics = '';
-    let i = 0;
-    for (i; i < arr.length; i++) {
-        if (arr[i] === 0) {
-            lyrics += ' Boom ';
+    let lyrics = ' ';
+    let j = 0;
+    for (j; j < arr.length; j++) {
+        if (arr[j] === 0) {
+            lyrics += 'Boom ';
         }
-        if ((arr[i] === 1 && arr[i] === (arr[i + 1])) && (arr[i] === arr[i + 2])) {
-            lyrics += ' !!!Break the base!!!';
+        if (arr[j] === 1) {
+            lyrics += 'Drop the base ';
         }
-        if (arr[i] === 1) {
-            lyrics += ' Drop the base ';
+        if (arr[j] === 1 && arr[j - 1] === 1 && arr[j - 2] === 1) {
+            lyrics += '!!!Break the base!!! ';
         }
-
     }
+
     return lyrics;
 }
 
